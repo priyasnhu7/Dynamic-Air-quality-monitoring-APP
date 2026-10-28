@@ -524,6 +524,21 @@ app.get('/api/auth/activity', (req, res) => {
   });
 });
 
+// View all registered users (sanitized, safe)
+app.get('/api/auth/users', (req, res) => {
+  const users = (db.users || []).map(u => ({
+    id: u.id,
+    name: u.name,
+    email: u.email,
+    mobile: u.mobile,
+    createdAt: u.createdAt,
+  }));
+  res.json({
+    totalUsers: users.length,
+    users,
+  });
+});
+
 // IoT Ingestion (supports both /api/iot/telemetry and /data)
 const handleTelemetryIngest = (req, res) => {
   const deviceKey = req.headers['x-device-key'] || req.query.apiKey;
