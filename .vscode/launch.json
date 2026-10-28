@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Flutter App",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "cwd": "${workspaceFolder}/aqi_flutter",
+      "preLaunchTask": "Reverse backend port to Android device"
+    }
+  ]
+}

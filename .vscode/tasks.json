@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start AQI backend",
+      "type": "shell",
+      "command": "${workspaceFolder}\\aqi_backend\\start_server.bat",
+      "options": {
+        "cwd": "${workspaceFolder}\\aqi_backend"
+      },
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "problemMatcher": {
+        "owner": "aqi-backend",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^",
+          "endsPattern": "^ Listening on: http://0\\.0\\.0\\.0:5000$"
+        }
+      }
+    },
+    {
+      "label": "Reverse backend port to Android device",
+      "type": "process",
+      "command": "${env:LOCALAPPDATA}\\Android\\Sdk\\platform-tools\\adb.exe",
+      "args": [
+        "reverse",
+        "tcp:5000",
+        "tcp:5000"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
