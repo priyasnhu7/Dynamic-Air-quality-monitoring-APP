@@ -1,0 +1,25 @@
+{
+  "name": "breathepure-aqi-backend",
+  "version": "1.0.0",
+  "description": "High-performance Node.js IoT Backend for BreathePure (ESP8266 + MQ-135 + Flutter)",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "iot",
+    "aqi",
+    "esp8266",
+    "mq135",
+    "flutter",
+    "breathepure"
+  ],
+  "author": "BreathePure",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
